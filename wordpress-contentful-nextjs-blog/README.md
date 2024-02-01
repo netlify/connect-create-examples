@@ -17,7 +17,7 @@ Scaling WordPress with the power of [Next.js](https://nextjs.org/) and the stati
 
 ## ⚡️ Quick Start
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/colbyfayock/next-wordpress-starter) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcolbyfayock%2Fnext-wordpress-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/colbyfayock/next-wordpress-starter)
 
 ### Requirements
 * [WordPress](https://wordpress.org/)
@@ -134,12 +134,6 @@ There are two options as to how you can deploy this project to Netlify:
 Regardless of which option you choose, you can configure your [environment variables](#environment) either when creating your new site or by navigating to Site Settings > Build & Deploy > Environment and triggering a new deploy once added.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/colbyfayock/next-wordpress-starter)
-
-#### Vercel
-
-Given Next.js is a Vercel-supported project, you can simply import the project as a new site and configure your [environment variables](#environment) by either adding them during import or by navigating to Settings > Environment Variables and triggering a new build once added.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcolbyfayock%2Fnext-wordpress-starter)
 
 ## 🛠 Configuring Your Project
 
