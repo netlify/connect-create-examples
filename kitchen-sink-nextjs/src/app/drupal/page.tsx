@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -10,6 +10,9 @@ query drupalPages {
       nodes {
         id
         title
+        body {
+          value
+        }
       }
     }
   }
@@ -34,14 +37,24 @@ export default async function DrupalPages() {
   const pages = await getPages();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {pages?.map((page) => {
-        return (
-          <Card key={page.id}>
-            <h1>{page?.title}</h1>
-          </Card>
-        );
-      })}
+    <main className="min-h-screen items-center justify-between p-24">
+      <section>
+        <h1>Drupal</h1>
+        <p>This page is rendered with data from Drupal</p>
+        <br />
+        {pages?.map((page) => {
+          return (
+            <Card key={page.id}>
+              <CardHeader>
+                <CardTitle>{page?.title}</CardTitle>
+                <CardContent>
+                  <p dangerouslySetInnerHTML={{ __html: page?.body?.value }} />
+                </CardContent>
+              </CardHeader>
+            </Card>
+          );
+        })}
+      </section>
     </main>
   );
 }
