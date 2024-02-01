@@ -41,7 +41,7 @@ export default async function Posts() {
         <h1>Wordpress</h1>
         <p>This page is rendered with data from Wordpress</p>
         <br />
-        {posts?.map((post) => {
+        {posts?.map((post: any) => {
           return (
             <Card key={post.id}>
               <CardHeader>

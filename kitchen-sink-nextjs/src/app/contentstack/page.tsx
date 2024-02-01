@@ -1,8 +1,8 @@
-import { Card } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
+import { Image } from "@unpic/react";
 
 const query = `
 query products {
@@ -50,27 +50,23 @@ export default async function Products() {
         <p>This page is rendered with data from Contentstack</p>
         <br />
         <section className="flex flex-wrap justify-between">
-          {products?.map((product) => {
+          {products?.map((product: any) => {
             return (
-              <Card
+              <div
                 key={product.id}
                 className="mb-4"
                 style={{ flexBasis: `24%` }}
               >
+                <Image
+                  src={product.image?.url}
+                  layout="constrained"
+                  className="aspect-square drop-shadow rounded-lg hover:scale-105 transition-transform duration-300"
+                  width={400}
+                  height={300}
+                />
                 <h1>{product?.title}</h1>
-
-                <div style={{ maxWidth: `300px` }}>
-                  <img
-                    className="aspect-square drop-shadow rounded-lg hover:scale-105 transition-transform duration-300"
-                    src={product.image?.url}
-                  />
-                </div>
-
-                <h3 className="text-xl font-bold text-white">
-                  {product?.name}
-                </h3>
                 <p className="text-xl text-green-500">${product.price}</p>
-              </Card>
+              </div>
             );
           })}
         </section>

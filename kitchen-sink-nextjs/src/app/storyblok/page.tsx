@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Image } from "@unpic/react";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -41,7 +42,7 @@ export default async function Articles() {
         <h1>Storyblok</h1>
         <p>This page is rendered with data from Storyblok</p>
         <br />
-        {articles?.map((article) => {
+        {articles?.map((article: any) => {
           const parsedContent = JSON.parse(article?.content);
           const articleContent = parsedContent?.text?.content;
 
@@ -49,20 +50,21 @@ export default async function Articles() {
             <Card key={article.id} className="mb-10">
               <CardHeader>{parsedContent?.headline}</CardHeader>
               <CardContent>
-                <img
+                <Image
+                  layout="fullWidth"
                   src={parsedContent?.image?.filename}
                   alt={parsedContent?.headline}
                 />
                 <br />
-                {articleContent?.map(({ content }) => {
-                  return content?.map(({ text, type }) => {
+                {articleContent?.map(({ content }: any, index1: number) => {
+                  return content?.map(({ text, type }: any, index: number) => {
                     if (type === `heading`) {
-                      return <h1>{text}</h1>;
+                      return <h1 key={text}>{text}</h1>;
                     }
                     if (type === `hard_break`) {
-                      return <br />;
+                      return <br key={index1 + index} />;
                     }
-                    return <p>{text}</p>;
+                    return <p key={text}>{text}</p>;
                   });
                 })}
               </CardContent>

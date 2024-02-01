@@ -43,7 +43,7 @@ export default async function Stories() {
         <p>This page is rendered with data from a CSV file in Google Drive.</p>
         <br />
         <section className="flex flex-wrap justify-between">
-          {stories?.map((book) => {
+          {stories?.map((book: any) => {
             return (
               <div key={book.id} className="mb-4" style={{ flexBasis: `24%` }}>
                 <CardContent>

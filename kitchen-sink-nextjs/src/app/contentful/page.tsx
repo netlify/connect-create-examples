@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -47,7 +47,7 @@ export default async function Home() {
         <p>This page is rendered with data from Contentful</p>
         <br />
         <section className="flex flex-wrap justify-between">
-          {employees?.map((employee) => {
+          {employees?.map((employee: any) => {
             return (
               <Card
                 key={employee.id}

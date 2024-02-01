@@ -42,7 +42,7 @@ export default async function DrupalPages() {
         <h1>Drupal</h1>
         <p>This page is rendered with data from Drupal</p>
         <br />
-        {pages?.map((page) => {
+        {pages?.map((page: any) => {
           return (
             <Card key={page.id}>
               <CardHeader>
