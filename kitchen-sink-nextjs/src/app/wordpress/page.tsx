@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -10,6 +10,7 @@ query posts {
           nodes {
             id
             title
+            content
           }
         }
       
@@ -35,14 +36,24 @@ export default async function Posts() {
   const posts = await getPosts();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {posts?.map((post) => {
-        return (
-          <Card key={post.id}>
-            <h1>{post?.title}</h1>
-          </Card>
-        );
-      })}
+    <main className="min-h-screen items-center justify-between p-24">
+      <section>
+        <h1>Wordpress</h1>
+        <p>This page is rendered with data from Wordpress</p>
+        <br />
+        {posts?.map((post) => {
+          return (
+            <Card key={post.id}>
+              <CardHeader>
+                <CardTitle>{post?.title}</CardTitle>
+                <CardContent>
+                  <p dangerouslySetInnerHTML={{ __html: post?.content }} />
+                </CardContent>
+              </CardHeader>
+            </Card>
+          );
+        })}
+      </section>
     </main>
   );
 }
