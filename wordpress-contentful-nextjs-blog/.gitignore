@@ -30,9 +30,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
-.vercel
-
 public/wp-search.json
 public/feed.xml
 public/sitemap.xml
