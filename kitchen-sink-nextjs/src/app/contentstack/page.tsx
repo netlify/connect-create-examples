@@ -43,16 +43,38 @@ async function getProducts() {
 
 export default async function Products() {
   const products = await getProducts();
-  console.log(products);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {products?.map((product) => {
-        return (
-          <Card key={product.id}>
-            <h1>{product?.title}</h1>
-          </Card>
-        );
-      })}
+    <main className="min-h-screen items-center justify-between p-24">
+      <section>
+        <h1>Contentstack</h1>
+        <p>This page is rendered with data from Contentstack</p>
+        <br />
+        <section className="flex flex-wrap justify-between">
+          {products?.map((product) => {
+            return (
+              <Card
+                key={product.id}
+                className="mb-4"
+                style={{ flexBasis: `24%` }}
+              >
+                <h1>{product?.title}</h1>
+
+                <div style={{ maxWidth: `300px` }}>
+                  <img
+                    className="aspect-square drop-shadow rounded-lg hover:scale-105 transition-transform duration-300"
+                    src={product.image?.url}
+                  />
+                </div>
+
+                <h3 className="text-xl font-bold text-white">
+                  {product?.name}
+                </h3>
+                <p className="text-xl text-green-500">${product.price}</p>
+              </Card>
+            );
+          })}
+        </section>
+      </section>
     </main>
   );
 }
