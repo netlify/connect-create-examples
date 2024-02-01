@@ -1,4 +1,5 @@
-import { Card } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -10,6 +11,12 @@ query employees {
     nodes {
       id
       name
+      bio {
+        bio
+      }
+      avatar {
+        url
+      }
     }
   }
 }
@@ -32,16 +39,38 @@ async function getEmployees() {
 
 export default async function Home() {
   const employees = await getEmployees();
-  console.log(employees);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {employees?.map((employee) => {
-        return (
-          <Card key={employee.id}>
-            <h1>{employee?.name}</h1>
-          </Card>
-        );
-      })}
+    <main className="min-h-screen items-center justify-between p-24">
+      <section>
+        <h1>Contentful</h1>
+        <p>This page is rendered with data from Contentful</p>
+        <br />
+        <section className="flex flex-wrap justify-between">
+          {employees?.map((employee) => {
+            return (
+              <Card
+                key={employee.id}
+                className="mb-4"
+                style={{ flexBasis: `24%` }}
+              >
+                <CardContent>
+                  <section className="flex pt-5">
+                    <Avatar>
+                      <AvatarImage src={employee?.avatar?.url} />
+                      <AvatarFallback>{employee?.name?.[0]}</AvatarFallback>
+                    </Avatar>
+                    <div className="ml-4">
+                      <h1>{employee?.name}</h1>
+                      <p>{employee?.bio?.bio}</p>
+                    </div>
+                  </section>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </section>
+      </section>
     </main>
   );
 }
