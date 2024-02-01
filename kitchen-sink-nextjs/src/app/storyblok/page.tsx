@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -11,6 +11,7 @@ query storyblokEntries {
       id
       field_component
       name
+      content
     }
   }
 }
@@ -35,14 +36,40 @@ export default async function Articles() {
   const articles = await getArticles();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {articles?.map((article) => {
-        return (
-          <Card key={article.id}>
-            <h1>{article?.name}</h1>
-          </Card>
-        );
-      })}
+    <main className="min-h-screen items-center justify-between p-24">
+      <section>
+        <h1>Storyblok</h1>
+        <p>This page is rendered with data from Storyblok</p>
+        <br />
+        {articles?.map((article) => {
+          const parsedContent = JSON.parse(article?.content);
+          const articleContent = parsedContent?.text?.content;
+
+          return (
+            <Card key={article.id} className="mb-10">
+              <CardHeader>{parsedContent?.headline}</CardHeader>
+              <CardContent>
+                <img
+                  src={parsedContent?.image?.filename}
+                  alt={parsedContent?.headline}
+                />
+                <br />
+                {articleContent?.map(({ content }) => {
+                  return content?.map(({ text, type }) => {
+                    if (type === `heading`) {
+                      return <h1>{text}</h1>;
+                    }
+                    if (type === `hard_break`) {
+                      return <br />;
+                    }
+                    return <p>{text}</p>;
+                  });
+                })}
+              </CardContent>
+            </Card>
+          );
+        })}
+      </section>
     </main>
   );
 }
