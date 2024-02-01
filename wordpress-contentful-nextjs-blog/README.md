@@ -1,4 +1,6 @@
-# Next.js WordPress Starter
+# Next.js WordPress + Contentful Starter
+
+Netlify Connect Example taking this Wordpress nextjs blog starter https://github.com/colbyfayock/next-wordpress-starter and converting it to use Connect and then adding Contentful to pull in blog posts as well.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
