@@ -88,6 +88,18 @@ export default function Home() {
             </span>
           </h2>
         </a>
+        <a
+          href="/starwars"
+          className="group border border-transparent px-5 py-4 transition-colors hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          rel="noopener noreferrer"
+        >
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Star Wars{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+        </a>
       </div>
     </main>
   );
