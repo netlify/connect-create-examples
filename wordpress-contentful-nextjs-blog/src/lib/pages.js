@@ -122,7 +122,7 @@ export async function getAllPages(options = {}) {
     query: allPagesIncludesTypes[queryIncludes],
   });
 
-  const pages = data?.data.allWpPage.edges.map(edge => edge.node).map(mapPageData);
+  const pages = data?.data.allWpPage.edges.map((edge) => edge.node).map(mapPageData);
 
   return {
     pages,

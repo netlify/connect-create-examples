@@ -21,7 +21,7 @@ export async function getAllCategories() {
     query: QUERY_ALL_CATEGORIES,
   });
 
-  const categories = data?.data.allWpCategory.edges.map(edge => edge.node)
+  const categories = data?.data.allWpCategory.edges.map((edge) => edge.node);
 
   return {
     categories,
@@ -53,7 +53,6 @@ export async function getCategoryBySlug(slug) {
 
   if (!categoryData?.data.wpCategory) return { category: undefined };
 
-  
   const category = mapCategoryData(categoryData?.data.wpCategory);
 
   // If the SEO plugin is enabled, look up the data

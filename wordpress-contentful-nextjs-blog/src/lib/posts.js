@@ -140,9 +140,9 @@ export async function getAllPosts(options = {}) {
     query: allPostsIncludesTypes[queryIncludes],
   });
 
-  const contentfulPosts = data?.data.allContentfulPageBlogPost.nodes
+  const contentfulPosts = data?.data.allContentfulPageBlogPost.nodes;
 
-  const posts = [ ...data?.data.allWpPost.edges.map(edge => edge.node), ...contentfulPosts]
+  const posts = [...data?.data.allWpPost.edges.map((edge) => edge.node), ...contentfulPosts];
 
   return {
     posts: Array.isArray(posts) && posts.map(mapPostData),
@@ -178,7 +178,10 @@ export async function getPostsByAuthorSlug({ slug, ...options }) {
     throw e;
   }
 
-  const posts = [...postData?.data.allWpPost.edges.map(({ node = {} }) => node), ...postData?.data.allContentfulPageBlogPost.nodes];
+  const posts = [
+    ...postData?.data.allWpPost.edges.map(({ node = {} }) => node),
+    ...postData?.data.allContentfulPageBlogPost.nodes,
+  ];
 
   return {
     posts: Array.isArray(posts) && posts.map(mapPostData),
@@ -304,7 +307,7 @@ export function mapPostData(post = {}) {
   // Clean up the categories to make them more easy to access
 
   if (data.categories) {
-    data.categories = data.categories.nodes
+    data.categories = data.categories.nodes;
   }
 
   // Clean up the featured image to make them more easy to access
@@ -316,8 +319,8 @@ export function mapPostData(post = {}) {
       caption: data.featuredImage.caption || data.featuredImage.title,
       sourceUrl: data.featuredImage.sourceUrl || data.featuredImage.url,
       sizes: data.featuredImage.sizes || data.featuredImage.size,
-      id: data.featuredImage.id
-    }
+      id: data.featuredImage.id,
+    };
   }
 
   return data;
@@ -330,7 +333,7 @@ export function mapPostData(post = {}) {
 export async function getRelatedPosts(categories, postId, count = 5) {
   if (!Array.isArray(categories) || categories.length === 0) return;
 
-  const newCategoriesArr = [...categories]
+  const newCategoriesArr = [...categories];
 
   let related = {
     category: newCategoriesArr && newCategoriesArr.shift(),

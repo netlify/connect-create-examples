@@ -77,7 +77,10 @@ export async function getAllUsers() {
     throw e;
   }
 
-  let users = [...usersData?.data.allWpUser.edges.map(({ node = {} }) => node), ...usersData?.data.allContentfulComponentAuthor.nodes];
+  let users = [
+    ...usersData?.data.allWpUser.edges.map(({ node = {} }) => node),
+    ...usersData?.data.allContentfulComponentAuthor.nodes,
+  ];
 
   users = users.map(mapUserData);
 
