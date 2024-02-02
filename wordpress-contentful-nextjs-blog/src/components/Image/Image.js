@@ -2,16 +2,7 @@ import ClassName from 'models/classname';
 
 import styles from './Image.module.scss';
 
-const Image = ({
-  children,
-  className,
-  width = '100%',
-  height = 'auto',
-  src,
-  alt,
-  sizes,
-  dangerouslySetInnerHTML,
-}) => {
+const Image = ({ children, className, width = '100%', height = 'auto', src, alt, sizes, dangerouslySetInnerHTML }) => {
   const imageClassName = new ClassName(styles.image);
 
   imageClassName.addIf(className, className);
