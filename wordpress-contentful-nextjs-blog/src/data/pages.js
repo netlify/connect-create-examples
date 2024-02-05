@@ -3,28 +3,28 @@ import { gql } from '@apollo/client';
 export const PAGE_FIELDS = gql`
   fragment PageFields on WpPage {
     wpChildren {
-        nodes {
+      nodes {
+        id
+        slug
+        uri
+        ... on WpPage {
           id
-          slug
-          uri
-          ... on WpPage {
-            id
-            title
-          }
+          title
         }
       }
+    }
     id
     menuOrder
     wpParent {
-        node {
-          id
-          slug
-          uri
-          ... on WpPage {
-            title
-          }
+      node {
+        id
+        slug
+        uri
+        ... on WpPage {
+          title
         }
       }
+    }
     slug
     title
     uri

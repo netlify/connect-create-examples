@@ -10,7 +10,7 @@ export const MENU_LOCATION_NAVIGATION_DEFAULT = 'DEFAULT_NAVIGATION';
 
 export async function getAllMenus() {
   const apolloClient = getApolloClient();
-  let menus
+  let menus;
 
   try {
     const data = await apolloClient.query({
@@ -18,10 +18,9 @@ export async function getAllMenus() {
     });
     menus = data?.data.allWpMenu.edges.map(mapMenuData);
   } catch (e) {
-    menus = []
-    console.error(`no menus`, e.message)
+    menus = [];
+    console.error(`no menus`, e.message);
   }
-
 
   const defaultNavigation = createMenuFromPages({
     locations: [MENU_LOCATION_NAVIGATION_DEFAULT],

@@ -4,9 +4,9 @@ export const QUERY_SITE_DATA = gql`
   query SiteData {
     wp {
       generalSettings {
-      description
-      language
-      title
+        description
+        language
+        title
       }
     }
   }
