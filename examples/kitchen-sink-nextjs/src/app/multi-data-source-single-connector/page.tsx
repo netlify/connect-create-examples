@@ -67,7 +67,7 @@ export default async function Home() {
         <h1>Multi Data Source Connector </h1>
         <p>
           This page shows data rendered from a Connector that sourced data from
-          multiple data sources and reflected them in a single model "Team"
+          multiple data sources and reflected them in a single model <strong>Team</strong>
         </p>
         <br />
         <Accordion type="single" collapsible>
