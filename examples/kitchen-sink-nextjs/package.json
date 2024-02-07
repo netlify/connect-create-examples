@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:create": "LOCAL_NETLIFY_CONNECT_API_URL='http://localhost:7070/__graphql' pnpm dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
