@@ -7,7 +7,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --shims",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --clean --watch --shims"
+    "dev": "tsup src/index.ts --format cjs,esm --dts --clean --watch --shims",
+    "postinstall": "pnpm run build"
   },
   "files": [
     "dist",
