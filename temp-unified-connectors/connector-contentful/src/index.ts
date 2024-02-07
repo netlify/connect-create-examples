@@ -16,6 +16,7 @@ export class ContentfulContentSource extends ContentfulContentSourceOrig {
       accessToken: options.managementToken,
       spaceId: options.spaceId,
       previewToken: options.previewToken,
+      environment: `master`
     });
     this.pluginConfig = {
       connector: "@netlify/connector-contentful",
