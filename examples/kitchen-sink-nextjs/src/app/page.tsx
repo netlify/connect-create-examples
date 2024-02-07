@@ -125,6 +125,13 @@ export default function Home() {
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>Star Wars </h2>
         </a>
+        <a
+          href="/multi-data-source-single-connector"
+          className="group px-5 py-4 transition-colors hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 bg-white rounded-xl m-2"
+          rel="noopener noreferrer"
+        >
+          <h2 className={`mb-3 text-2xl font-semibold`}>Multiple Data sources</h2>
+        </a>
       </div>
 
       <h2 className="text-2xl mb-12 inline-block pt-10">How Connect works</h2>
