@@ -1,0 +1,15 @@
+{
+  "name": "connect-create-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm run --recursive build",
+    "build:packages": "pnpm run --filter '@netlify/*' build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "private": true
+}

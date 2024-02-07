@@ -1,0 +1,31 @@
+{
+  "name": "@netlify/connector-contentful",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --shims",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --clean --watch --shims"
+  },
+  "files": [
+    "dist",
+    "gatsby-node.mjs"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@stackbit/cms-contentful": "^0.4.36",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-source-contentful": "^8.13.1"
+  },
+  "devDependencies": {
+    "@stackbit/types": "^0.11.0",
+    "publint": "^0.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
