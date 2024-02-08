@@ -31,6 +31,12 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      highlight.js:
+        specifier: ^11.9.0
+        version: 11.9.0
+      highlightjs-graphql:
+        specifier: ^1.0.2
+        version: 1.0.2
       next:
         specifier: 14.1.0
         version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
@@ -8630,6 +8636,15 @@ packages:
     dependencies:
       capital-case: 1.0.4
       tslib: 2.6.2
+    dev: false
+
+  /highlight.js@11.9.0:
+    resolution: {integrity: sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
+  /highlightjs-graphql@1.0.2:
+    resolution: {integrity: sha512-jShTftpKQDwMXc+7OHOpHXRYSweT08EO2YOIcLbwU00e9yuwJMYXGLF1eiDO0aUPeQU4/5EjAh5HtPt3ly7rvg==}
     dev: false
 
   /hoist-non-react-statics@3.3.2:
