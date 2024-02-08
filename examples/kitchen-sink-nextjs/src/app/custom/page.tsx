@@ -4,6 +4,7 @@ import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
+import { CodeExample } from '@/components/Code';
 
 const query = `
 query books {
@@ -41,7 +42,7 @@ export default async function Stories() {
       <section>
         <h1>Custom connector</h1>
         <p>This page is rendered with data from a CSV file in Google Drive.</p>
-        <br />
+        <CodeExample code={query} />
         <section className="flex flex-wrap justify-between">
           {stories?.map((book: any) => {
             return (

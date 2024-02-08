@@ -4,6 +4,7 @@ import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
+import { CodeExample } from "@/components/Code";
 
 const query = `
 query storyblokEntries {
@@ -42,6 +43,7 @@ export default async function Articles() {
         <h1>Storyblok</h1>
         <p>This page is rendered with data from Storyblok</p>
         <br />
+        <CodeExample code={query} />
         {articles?.map((article: any) => {
           const parsedContent = JSON.parse(article?.content);
           const articleContent = parsedContent?.text?.content;

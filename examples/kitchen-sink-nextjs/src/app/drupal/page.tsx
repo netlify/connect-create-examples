@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
@@ -41,14 +42,16 @@ export default async function DrupalPages() {
       <section>
         <h1>Drupal</h1>
         <p>This page is rendered with data from Drupal</p>
-        <br />
+        <CodeExample code={query} />
         {pages?.map((page: any) => {
           return (
             <Card key={page.id}>
               <CardHeader>
                 <CardTitle>{page?.title}</CardTitle>
                 <CardContent>
-                  <p dangerouslySetInnerHTML={{ __html: page?.body?.value }} />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: page?.body?.value }}
+                  />
                 </CardContent>
               </CardHeader>
             </Card>

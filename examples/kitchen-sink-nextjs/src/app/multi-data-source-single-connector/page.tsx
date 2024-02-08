@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import {
   Accordion,
   AccordionItem,
@@ -10,8 +11,7 @@ import {
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
 
-async function getTeams(sportType: string) {
-  const query = `
+const query = `
     query teams($sportType: String!) {
             allSportsTeam(filter: { sportType: { eq: $sportType } }) {
               nodes {
@@ -28,6 +28,8 @@ async function getTeams(sportType: string) {
             }
     }
     `;
+    
+async function getTeams(sportType: string) {
   const res = await fetch(NETLIFY_CONNECT_API_URL, {
     method: `POST`,
     headers: {
@@ -67,9 +69,10 @@ export default async function Home() {
         <h1>Multi Data Source Connector </h1>
         <p>
           This page shows data rendered from a Connector that sourced data from
-          multiple data sources and reflected them in a single model <strong>Team</strong>
+          multiple data sources and reflected them in a single model{" "}
+          <strong>Team</strong>
         </p>
-        <br />
+        <CodeExample code={query} />
         <Accordion type="single" collapsible>
           {sportsData?.map(({ sportType, teamData }) => {
             return (

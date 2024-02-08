@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
@@ -40,14 +41,14 @@ export default async function Posts() {
       <section>
         <h1>Wordpress</h1>
         <p>This page is rendered with data from Wordpress</p>
-        <br />
+        <CodeExample code={query} />
         {posts?.map((post: any) => {
           return (
             <Card key={post.id}>
               <CardHeader>
                 <CardTitle>{post?.title}</CardTitle>
                 <CardContent>
-                  <p dangerouslySetInnerHTML={{ __html: post?.content }} />
+                  <div dangerouslySetInnerHTML={{ __html: post?.content }} />
                 </CardContent>
               </CardHeader>
             </Card>

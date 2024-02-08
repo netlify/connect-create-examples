@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -44,15 +45,13 @@ export default async function Home() {
           This page is rendered with data from an existing GraphQL API: SWAPI
           federated through Connect
         </p>
-        <br />
+
+        <CodeExample code={query} />
+
         <section className="flex flex-wrap justify-between">
           {starships?.map((ship: any) => {
             return (
-              <Card
-                key={ship.id}
-                className="mb-4"
-                style={{ flexBasis: `24%` }}
-              >
+              <Card key={ship.id} className="mb-4" style={{ flexBasis: `24%` }}>
                 <CardContent>
                   <section className="flex pt-5">
                     <Avatar>
