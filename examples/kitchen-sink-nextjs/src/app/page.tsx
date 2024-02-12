@@ -101,7 +101,16 @@ export default function Home() {
         </a>
       </div>
 
-      <h2 className="text-2xl mb-12 inline-block pt-10">Custom Connectors</h2>
+      <h2 className="text-2xl mb-12 inline-block pt-10">
+        <a
+          href="https://github.com/abhiaiyer91/connectors"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-teal-500 underline"
+        >
+          Custom Connectors
+        </a>
+      </h2>
 
       <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left bg-slate-100 p-12 rounded-xl">
         <a
@@ -130,7 +139,9 @@ export default function Home() {
           className="group px-5 py-4 transition-colors hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 bg-white rounded-xl m-2"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>Multiple Data sources</h2>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Multiple Data sources
+          </h2>
         </a>
       </div>
 

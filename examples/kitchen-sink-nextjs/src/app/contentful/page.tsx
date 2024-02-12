@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -53,7 +54,7 @@ export default async function Home() {
       <section>
         <h1>Contentful</h1>
         <p>This page is rendered with data from Contentful</p>
-        <br />
+        <CodeExample code={query} />
         <section className="flex flex-wrap justify-between">
           {employees?.map((employee: any) => {
             return (

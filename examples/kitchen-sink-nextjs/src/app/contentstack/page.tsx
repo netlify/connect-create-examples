@@ -1,3 +1,4 @@
+import { CodeExample } from "@/components/Code";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
@@ -48,7 +49,7 @@ export default async function Products() {
       <section>
         <h1>Contentstack</h1>
         <p>This page is rendered with data from Contentstack</p>
-        <br />
+        <CodeExample code={query} />
         <section className="flex flex-wrap justify-between">
           {products?.map((product: any) => {
             return (
