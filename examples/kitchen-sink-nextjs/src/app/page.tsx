@@ -145,7 +145,12 @@ export default function Home() {
         </a>
       </div>
 
-      <h2 className="text-2xl mb-12 inline-block pt-10">How Connect works</h2>
+      <h2 className="text-2xl mb-4 inline-block pt-10">How Connect works</h2>
+      <ol className="mb-6">
+        <li>Schema Driven Applications</li>
+        <li>Unified API to your data</li>
+        <li>Focus on your application! Leave data wrangling to the pros</li>
+      </ol>
       <div>
         <Image
           src="https://docs.netlify.com/images/connect-get-started-data-layer-diagram.png"
