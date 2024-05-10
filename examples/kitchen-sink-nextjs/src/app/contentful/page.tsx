@@ -51,39 +51,45 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen items-center justify-between p-24">
-      <section>
-        <h1>Contentful</h1>
-        <p>This page is rendered with data from Contentful</p>
-        <CodeExample code={query} />
-        <section className="flex flex-wrap justify-between">
-          {employees?.map((employee: any) => {
-            return (
-              <Card
-                data-sb-object-id={employee?.contentful_id}
-                key={employee.id}
-                className="mb-4"
-                style={{ flexBasis: `24%` }}
-              >
-                <CardContent>
-                  <section className="flex pt-5">
-                    <Avatar>
-                      <AvatarImage
-                        data-sb-field-path="avatar"
-                        src={employee?.avatar?.url}
-                      />
-                      <AvatarFallback>{employee?.name?.[0]}</AvatarFallback>
-                    </Avatar>
-                    <div className="ml-4">
-                      <h1 data-sb-field-path="name">{employee?.name}</h1>
-                      <p data-sb-field-path="bio">{employee?.bio?.bio}</p>
-                    </div>
-                  </section>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </section>
+      <h1 className="text-xl font-bold ">Contentful</h1>
+      <p>This page is rendered with data from Contentful</p>
+
+      <section className="flex flex-wrap justify-between pt-10">
+        {employees?.map((employee: any) => {
+          return (
+            <Card
+              data-sb-object-id={employee?.contentful_id}
+              key={employee.id}
+              className="mb-4"
+              style={{ flexBasis: `24%` }}
+            >
+              <CardContent>
+                <section className="flex pt-5">
+                  <Avatar>
+                    <AvatarImage
+                      data-sb-field-path="avatar"
+                      src={employee?.avatar?.url}
+                    />
+                    <AvatarFallback>{employee?.name?.[0]}</AvatarFallback>
+                  </Avatar>
+                  <div className="ml-4">
+                    <h1 data-sb-field-path="name" className="font-medium">
+                      {employee?.name}
+                    </h1>
+                    <p
+                      data-sb-field-path="bio"
+                      className="font-normal text-sm text-slate-500"
+                    >
+                      {employee?.bio?.bio}
+                    </p>
+                  </div>
+                </section>
+              </CardContent>
+            </Card>
+          );
+        })}
       </section>
+      <CodeExample code={query} />
     </main>
   );
 }

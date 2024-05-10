@@ -1,141 +1,141 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
- 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
- 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
 }
- 
+
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
 
 pre {
-  color: var(--color-bg);
-  background: #33373b;
-  border-radius: 4px;
-  font-size: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+    color: var(--color-bg);
+    background: #33373b;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 p code {
-  background-color: var(--color-gray-L300);
-  border-radius: 4px;
-  padding: 0.2em 0.3em;
-  font-size: 0.8em;
+    background-color: var(--color-gray-L300);
+    border-radius: 4px;
+    padding: 0.2em 0.3em;
+    font-size: 0.8em;
 }
 
 pre code {
-  display: block;
-  width: 100%;
-  white-space: pre-wrap;
-  word-break: break-all;
-  font-size: 1em;
-  padding: 1.25rem;
+    display: block;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 1em;
+    padding: 1.25rem;
 }
 
 .hljs-cdata,
 .hljs-comment,
 .hljs-doctype,
 .hljs-prolog {
-  color: #a3a7ac;
+    color: #a3a7ac;
 }
 
 .hljs-punctuation {
-  color: #c5c8c6;
+    color: #c5c8c6;
 }
 
 .namespace {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .hljs-keyword,
 .hljs-property,
 .hljs-tag {
-  color: #96cbfe;
+    color: #96cbfe;
 }
 
 .hljs-title.class_ {
-  color: #ffffb6;
+    color: #ffffb6;
 }
 
 .hljs-boolean,
 .hljs-constant {
-  color: #9c9;
+    color: #9c9;
 }
 
 .hljs-symbol {
-  color: #f92672;
+    color: #f92672;
 }
 
 .hljs-number {
-  color: #ff73fd;
+    color: #ff73fd;
 }
 
 .hljs-attr-name,
@@ -144,68 +144,68 @@ pre code {
 .hljs-inserted,
 .hljs-selector,
 .hljs-string {
-  color: #a8ff60;
+    color: #a8ff60;
 }
 
 .hljs-variable {
-  color: #c6c5fe;
+    color: #c6c5fe;
 }
 
 .hljs-operator {
-  color: #ededed;
+    color: #ededed;
 }
 
 .hljs-entity {
-  color: #ffffb6;
-  cursor: help;
+    color: #ffffb6;
+    cursor: help;
 }
 
 .hljs-url {
-  color: #96cbfe;
+    color: #96cbfe;
 }
 
 .language-css .hljs-string,
 .style .hljs-string {
-  color: #87c38a;
+    color: #87c38a;
 }
 
 .hljs-atrule,
 .hljs-attr-value {
-  color: #f9ee98;
+    color: #f9ee98;
 }
 
 .hljs-title.function_ {
-  color: #dad085;
+    color: #dad085;
 }
 
 .hljs-regex {
-  color: #e9c062;
+    color: #e9c062;
 }
 
 .hljs-important {
-  color: #fd971f;
+    color: #fd971f;
 }
 
 .hljs-bold,
 .hljs-important {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .hljs-italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .hljs-prefix.deleted,
 .hljs-prefix.inserted,
 .hljs-prefix.unchanged {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .hljs-table {
-  background: 0 0;
-  box-shadow: none;
-  display: inline;
+    background: 0 0;
+    box-shadow: none;
+    display: inline;
 }
