@@ -73,6 +73,16 @@
     body {
         @apply bg-background text-foreground;
     }
+    h1 {
+        @apply text-xl font-bold;
+    }
+    h2 {
+        @apply font-medium;
+    }
+
+    code {
+        @apply rounded-lg;
+    }
 }
 
 pre {

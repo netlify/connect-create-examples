@@ -15,9 +15,9 @@ export default function Home() {
             aspectRatio
           />
         </div>
-        <h1 className="text-xl pt-5 text-center  text-slate-400">
+        <h3 className="text-lg pt-5 text-center  text-slate-400">
           Content Management Systems Examples
-        </h1>
+        </h3>
         <div className="bg-slate-200 p-5 m-5 rounded-lg grid sm:grid-cols-3 grid-cols-1 	">
           <Button name="Contentful" href="/contentful" src="contentful.svg" />
           <Button
@@ -29,17 +29,17 @@ export default function Home() {
           <Button name="Storyblok" href="/storyblok" src="storyblock.svg" />
           <Button name="Wordpress" href="/wordpress" src="wordpress.png" />
         </div>
-        <h1 className=" text-xl pt-5 text-center  text-slate-400">
+        <h3 className=" text-lg pt-5 text-center  text-slate-400">
           Custom Connectors Examples
-        </h1>
+        </h3>
         <div className="bg-slate-200 p-5 m-5 rounded-lg grid sm:grid-cols-3 grid-cols-1 	">
-          <Button name="Custom Connector" />
-          <Button name="Dynamic Connector" />
+          <Button name="Custom Connector" href="/custom" />
+          <Button name="Dynamic Connector" href="/dynamic" />
           <Button name="Multiple Data Sources" />
           <Button name="StarWars API" />
         </div>
         <p className="text-slate-40500 p-2 mt-10  border-2 w-2/3 mx-auto rounded-full">
-          View the source code on these examples on{" "}
+          View the custom connector examples on{" "}
           <a
             href="https://github.com/abhiaiyer91/connectors"
             className="underline font-medium after:content-['_↗']"

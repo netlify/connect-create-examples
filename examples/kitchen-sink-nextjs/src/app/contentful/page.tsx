@@ -51,9 +51,9 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen items-center justify-between p-24">
-      <h1 className="text-xl font-bold ">Contentful</h1>
+      <h1>Contentful</h1>
       <p>This page is rendered with data from Contentful</p>
-
+      <CodeExample code={query} />
       <section className="flex flex-wrap justify-between pt-10">
         {employees?.map((employee: any) => {
           return (
@@ -73,9 +73,9 @@ export default async function Home() {
                     <AvatarFallback>{employee?.name?.[0]}</AvatarFallback>
                   </Avatar>
                   <div className="ml-4">
-                    <h1 data-sb-field-path="name" className="font-medium">
+                    <h2 data-sb-field-path="name" className="font-medium">
                       {employee?.name}
-                    </h1>
+                    </h2>
                     <p
                       data-sb-field-path="bio"
                       className="font-normal text-sm text-slate-500"
@@ -89,7 +89,6 @@ export default async function Home() {
           );
         })}
       </section>
-      <CodeExample code={query} />
     </main>
   );
 }

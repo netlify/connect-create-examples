@@ -47,9 +47,9 @@ export default async function Products() {
   return (
     <main className="min-h-screen items-center justify-between p-24">
       <section>
-        <h1 className="text-xl font-bold ">Contentstack</h1>
+        <h1>Contentstack</h1>
         <p>This page is rendered with data from Contentstack</p>
-
+        <CodeExample code={query} />
         <section className="flex flex-wrap justify-between pt-10">
           {products?.map((product: any) => {
             return (
@@ -74,7 +74,6 @@ export default async function Products() {
           })}
         </section>
       </section>
-      <CodeExample code={query} />
     </main>
   );
 }

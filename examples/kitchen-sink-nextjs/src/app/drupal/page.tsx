@@ -41,20 +41,23 @@ export default async function DrupalPages() {
   return (
     <main className="min-h-screen items-center justify-between p-24">
       <section>
-        <h1 className="text-xl font-bold ">Drupal</h1>
+        <h1>Drupal</h1>
         <p>This page is rendered with data from Drupal</p>
         <CodeExample code={query} />
 
         {pages?.map((page: any) => {
           return (
-            <article className="p-5 m-5 border-2 " key={page.id}>
-              <h2 className="text-lg border-b-2 mb-2 font-semibold bo">
-                {page?.title}
-              </h2>
-              <section className="line-clamp-5">{page?.body?.value}</section>
+            <article
+              className="mt-5 p-5 rounded-xl border text-card-foreground shadow mb-4 "
+              key={page.id}
+            >
+              <h2 className="text-xl  mb-2 font-semibold bo">{page?.title}</h2>
+              <section className=" line-clamp-5 text-slate-500">
+                {page?.body?.value}
+              </section>
               <Link
-                href="3"
-                className=" mx-auto text-blue-500 font-semibold after:content-['_↗']"
+                href="#"
+                className="block p-2 mx-auto text-blue-500 text-right font-semibold after:content-['_↗']"
               >
                 Read More
               </Link>
