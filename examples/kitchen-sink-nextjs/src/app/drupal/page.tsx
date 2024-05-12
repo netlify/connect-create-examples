@@ -51,8 +51,8 @@ export default async function DrupalPages() {
               className="mt-5 p-5 rounded-xl border text-card-foreground shadow mb-4 "
               key={page.id}
             >
-              <h2 className="text-xl  mb-2 font-semibold bo">{page?.title}</h2>
-              <section className=" line-clamp-5 text-slate-500">
+              <h2 className="text-xl font-semibold">{page?.title}</h2>
+              <section className="pt-3 line-clamp-5 text-slate-500">
                 {page?.body?.value}
               </section>
               <Link

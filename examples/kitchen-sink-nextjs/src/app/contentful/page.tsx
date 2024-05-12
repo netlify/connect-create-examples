@@ -54,14 +54,13 @@ export default async function Home() {
       <h1>Contentful</h1>
       <p>This page is rendered with data from Contentful</p>
       <CodeExample code={query} />
-      <section className="flex flex-wrap justify-between pt-10">
+      <section className="grid sm:grid-cols-3">
         {employees?.map((employee: any) => {
           return (
             <Card
               data-sb-object-id={employee?.contentful_id}
               key={employee.id}
-              className="mb-4"
-              style={{ flexBasis: `24%` }}
+              className="m-2"
             >
               <CardContent>
                 <section className="flex pt-5">

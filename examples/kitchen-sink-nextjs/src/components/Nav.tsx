@@ -10,13 +10,13 @@ export default function Nav() {
       </Head>
       <div className="navbar bg-neutral text-neutral-100  ">
         <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-lg">
+          <Link href="/" className="btn btn-ghost sm:text-lg">
             Netlify Connect - Kitchen Sink Demo
           </Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li className="">
               <a href="https://docs.netlify.com/connect/get-started/">Docs</a>
             </li>
             <li>
