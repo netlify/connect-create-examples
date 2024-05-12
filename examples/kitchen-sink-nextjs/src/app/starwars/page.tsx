@@ -48,10 +48,10 @@ export default async function Home() {
 
         <CodeExample code={query} />
 
-        <section className="flex flex-wrap justify-between">
+        <section className="grid sm:grid-cols-2">
           {starships?.map((ship: any) => {
             return (
-              <Card key={ship.id} className="mb-4" style={{ flexBasis: `24%` }}>
+              <Card key={ship.id} className="m-2">
                 <CardContent>
                   <section className="flex pt-5">
                     <Avatar>
@@ -59,9 +59,11 @@ export default async function Home() {
                       <AvatarFallback>{ship?.name?.[0]}</AvatarFallback>
                     </Avatar>
                     <div className="ml-4">
-                      <h1>{ship?.name}</h1>
-                      <p>{ship?.model}</p>
-                      <p>{ship?.starshipClass}</p>
+                      <h2 className="text-lg">{ship?.name}</h2>
+                      <p className="text-sm uppercase text-slate-400">
+                        {ship?.model}
+                      </p>
+                      <p className="text-sm uppercase">{ship?.starshipClass}</p>
                     </div>
                   </section>
                 </CardContent>
@@ -70,6 +72,15 @@ export default async function Home() {
           })}
         </section>
       </section>
+      {/* <p className="text-slate-40500 p-2 mt-10 text-center border-2 w-2/3 mx-auto rounded-full">
+        View this example on on{" "}
+        <a
+          href="https://github.com/abhiaiyer91/connectors/blob/master/connectors/multi-data-source/src/index.ts"
+          className="underline font-medium after:content-['_↗']"
+        >
+          Github
+        </a>
+      </p> */}
     </main>
   );
 }

@@ -83,6 +83,9 @@
     code {
         @apply rounded-lg;
     }
+    section {
+        @apply pt-10;
+    }
 }
 
 pre {

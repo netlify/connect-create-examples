@@ -28,7 +28,7 @@ const query = `
             }
     }
     `;
-    
+
 async function getTeams(sportType: string) {
   const res = await fetch(NETLIFY_CONNECT_API_URL, {
     method: `POST`,
@@ -60,7 +60,7 @@ export default async function Home() {
         sportType,
         teamData: await getTeams(sportType),
       };
-    })
+    }),
   );
 
   return (
@@ -82,25 +82,27 @@ export default async function Home() {
                   )
                 </AccordionTrigger>
                 <AccordionContent>
-                  <section className="flex flex-wrap">
+                  <section className="grid sm:grid-cols-3">
                     {teamData?.map((team: any) => {
                       return (
-                        <Card
-                          key={team.id}
-                          className="mb-4 mr-2"
-                          style={{ flexBasis: `24%` }}
-                        >
-                          <CardContent>
-                            <section className="flex pt-5">
-                              <div className="ml-4">
-                                <h1>{team?.fullName}</h1>
-                                <h1>{team?.name}</h1>
-                                <p>{team?.location}</p>
+                        <Card key={team.id} className="m-3">
+                          <CardContent className="p-4">
+                            <div className=" m-2">
+                              <div className="">
+                                <h2 className="text-lg font-semibold text-slate-800">
+                                  {team?.fullName}
+                                </h2>
+                                <h3 className="font-bold text-red-500">
+                                  {team?.name}
+                                </h3>
                                 <p>{team?.abbreviation}</p>
-                                <p>{team?.city}</p>
-                                <p>{team?.conference}</p>
+                                <p>
+                                  {team?.city}
+                                  {team?.location}
+                                  {team?.conference}
+                                </p>
                               </div>
-                            </section>
+                            </div>
                           </CardContent>
                         </Card>
                       );
@@ -112,6 +114,15 @@ export default async function Home() {
           })}
         </Accordion>
       </section>
+      <p className="text-slate-40500 p-2 mt-10 text-center border-2 w-2/3 mx-auto rounded-full">
+        View this example on on{" "}
+        <a
+          href="https://github.com/abhiaiyer91/connectors/blob/master/connectors/multi-data-source/src/index.ts"
+          className="underline font-medium after:content-['_↗']"
+        >
+          Github
+        </a>
+      </p>
     </main>
   );
 }

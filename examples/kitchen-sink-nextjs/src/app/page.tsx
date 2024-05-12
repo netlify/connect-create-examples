@@ -35,8 +35,11 @@ export default function Home() {
         <div className="bg-slate-200 p-5 m-5 rounded-lg grid sm:grid-cols-3 grid-cols-1 	">
           <Button name="Custom Connector" href="/custom" />
           <Button name="Dynamic Connector" href="/dynamic" />
-          <Button name="Multiple Data Sources" />
-          <Button name="StarWars API" />
+          <Button
+            name="Multiple Data Sources"
+            href="/multi-data-source-single-connector"
+          />
+          <Button name="StarWars API" href="/starwars" />
         </div>
         <p className="text-slate-40500 p-2 mt-10  border-2 w-2/3 mx-auto rounded-full">
           View the custom connector examples on{" "}
