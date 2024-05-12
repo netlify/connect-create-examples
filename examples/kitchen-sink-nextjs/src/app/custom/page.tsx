@@ -51,6 +51,8 @@ export default async function Stories() {
                   <Image
                     src={book.image}
                     layout="constrained"
+                    width={400}
+                    height={300}
                     alt="A lovely bath"
                     className="rounded-lg"
                   />

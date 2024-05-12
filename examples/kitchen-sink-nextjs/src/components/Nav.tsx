@@ -2,25 +2,20 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
-interface Props {
-  title: string;
-}
-
-export default function Nav(props: Props) {
-  const { title } = props;
+export default function Nav() {
   return (
     <header>
       <Head>
-        <title>Netlify Connect - {title}</title>
+        <title>Netlify Connect Examples</title>
       </Head>
-      <div class="navbar bg-neutral text-neutral-100  ">
-        <div class="flex-1">
-          <Link href="/" class="btn btn-ghost text-lg">
+      <div className="navbar bg-neutral text-neutral-100  ">
+        <div className="flex-1">
+          <Link href="/" className="btn btn-ghost text-lg">
             Netlify Connect - Kitchen Sink Demo
           </Link>
         </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal px-1">
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
             <li>
               <a href="https://docs.netlify.com/connect/get-started/">Docs</a>
             </li>

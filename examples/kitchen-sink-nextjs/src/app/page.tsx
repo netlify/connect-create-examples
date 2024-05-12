@@ -1,3 +1,4 @@
+import { AspectRatioIcon } from "@radix-ui/react-icons";
 import { Image } from "@unpic/react";
 
 import Link from "next/link";
@@ -7,12 +8,10 @@ export default function Home() {
     <>
       <main className="container mx-auto w-full lg:w-2/3  xs  text-center">
         <div>
-          <Image
+          <img
             src="/logo.svg"
             alt="Netlify - Kitchensink Demo"
-            className="mx-auto p-10"
-            width={400}
-            aspectRatio
+            className="mx-auto p-10 w-96"
           />
         </div>
         <h3 className="text-lg pt-5 text-center  text-slate-400">
@@ -60,7 +59,7 @@ export default function Home() {
 }
 
 //   <Button name="Drupal1" href="/drupal" src="drupal.png" />
-function Button(props) {
+function Button(props: any) {
   return (
     <Link
       href={props.href || "/"}
