@@ -50,6 +50,7 @@ export default async function Stories() {
                 <CardContent>
                   <Image
                     src={book.image}
+                    layout="constrained"
                     alt="A lovely bath"
                     className="rounded-lg"
                   />
