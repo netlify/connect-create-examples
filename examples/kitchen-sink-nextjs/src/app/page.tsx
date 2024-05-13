@@ -32,7 +32,7 @@ export default function Home() {
         <h3 className=" text-lg pt-5 text-center  text-slate-400">
           Custom Connectors Examples
         </h3>
-        <div className="bg-slate-200 p-5 m-5 rounded-lg grid sm:grid-cols-3 grid-cols-1 	">
+        <div className="bg-slate-200 p-5 m-5 rounded-lg grid sm:grid-cols-2 grid-cols-1 	">
           <Button name="Custom Connector" href="/custom" />
           <Button name="Dynamic Connector" href="/dynamic" />
           <Button
