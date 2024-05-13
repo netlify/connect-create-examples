@@ -79,7 +79,7 @@ export default async function Home() {
     <main className="min-h-screen items-center justify-between p-24">
       <section>
         <h1>
-          Dynamic Connector{" "}
+          Dynamic Connector{" - "}
           <a href="https://openbrewerydb.org/" target="_blank">
             https://openbrewerydb.org/
           </a>
@@ -95,7 +95,7 @@ export default async function Home() {
               Data from Connect cache ({cachedBreweries?.length})
             </AccordionTrigger>
             <AccordionContent>
-              <section className="flex flex-wrap">
+              <section className="grid sm:grid-cols-3">
                 {cachedBreweries?.map((brewery: any) => {
                   return (
                     <Card
@@ -106,7 +106,9 @@ export default async function Home() {
                       <CardContent>
                         <section className="flex pt-5">
                           <div className="ml-4">
-                            <h1>{brewery?.name}</h1>
+                            <h2 className="text-lg text-red-400">
+                              {brewery?.name}
+                            </h2>
                             <p>{brewery?.address1}</p>
                             <p>
                               {brewery?.city}, {brewery?.state}{" "}
@@ -127,7 +129,7 @@ export default async function Home() {
               Data from Brewery API origin ({originBreweries?.length})
             </AccordionTrigger>
             <AccordionContent>
-              <section className="flex flex-wrap">
+              <section className="grid sm:grid-cols-3">
                 {originBreweries?.map((brewery: any) => {
                   return (
                     <Card
@@ -138,7 +140,9 @@ export default async function Home() {
                       <CardContent>
                         <section className="flex pt-5">
                           <div className="ml-4">
-                            <h1>{brewery?.name}</h1>
+                            <h2 className="text-lg text-red-400">
+                              {brewery?.name}
+                            </h2>
                             <p>{brewery?.address1}</p>
                             <p>
                               {brewery?.city}, {brewery?.state}{" "}
@@ -156,6 +160,15 @@ export default async function Home() {
           </AccordionItem>
         </Accordion>
       </section>
+      {/* <p className="text-slate-40500 p-2 mt-10 text-center border-2 w-2/3 mx-auto rounded-full">
+        View this example on on{" "}
+        <a
+          href="https://github.com/abhiaiyer91/connectors/blob/master/connectors/stories/src/index.ts"
+          className="underline font-medium after:content-['_↗']"
+        >
+          Github
+        </a>
+      </p> */}
     </main>
   );
 }

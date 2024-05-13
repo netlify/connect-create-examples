@@ -50,23 +50,21 @@ export default async function Products() {
         <h1>Contentstack</h1>
         <p>This page is rendered with data from Contentstack</p>
         <CodeExample code={query} />
-        <section className="flex flex-wrap justify-between">
+        <section className="grid sm:grid-cols-4  pt-10">
           {products?.map((product: any) => {
             return (
-              <div
-                key={product.id}
-                className="mb-4"
-                style={{ flexBasis: `24%` }}
-              >
+              <div key={product.id} className="m-4">
                 <Image
                   src={product.image?.url}
                   layout="constrained"
-                  className="aspect-square drop-shadow rounded-lg hover:scale-105 transition-transform duration-300"
+                  className="aspect-square overflow-hidden drop-shadow rounded-lg hover:opacity-75"
                   width={400}
                   height={300}
                 />
-                <h1>{product?.title}</h1>
-                <p className="text-xl text-green-500">${product.price}</p>
+                <h2 className="mt-4 text-sm text-gray-700">{product?.title}</h2>
+                <p className="mt-1 text-lg font-medium text-gray-900">
+                  ${product.price}
+                </p>
               </div>
             );
           })}

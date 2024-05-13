@@ -47,15 +47,18 @@ export default async function Articles() {
         {articles?.map((article: any) => {
           const parsedContent = JSON.parse(article?.content);
           const articleContent = parsedContent?.text?.content;
-
+          console.log(articleContent);
           return (
-            <Card key={article.id} className="mb-10">
-              <CardHeader>{parsedContent?.headline}</CardHeader>
-              <CardContent>
+            <Card key={article.id} className=" mt-5 bg-black font-mono">
+              <CardHeader className="font-meidum text-2xl text-slate-100">
+                {parsedContent?.headline}
+              </CardHeader>
+              <CardContent className="text-slate-400 ">
                 <Image
                   layout="fullWidth"
                   src={parsedContent?.image?.filename}
                   alt={parsedContent?.headline}
+                  className="rounded-3xl shadow-sm overflow-clip"
                 />
                 <br />
                 {articleContent?.map(({ content }: any, index1: number) => {
@@ -66,7 +69,7 @@ export default async function Articles() {
                     if (type === `hard_break`) {
                       return <br key={index1 + index} />;
                     }
-                    return <p key={text}>{text}</p>;
+                    return <span key={text}>{text}</span>;
                   });
                 })}
               </CardContent>

@@ -1,14 +1,14 @@
-import { Image } from '@unpic/react';
+import { Image } from "@unpic/react";
 import { CardContent } from "@/components/ui/card";
 import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
-import { CodeExample } from '@/components/Code';
+import { CodeExample } from "@/components/Code";
 
 const query = `
 query books {
-  allHolidayStory {
+  allHolidayStory(limit: 20) {
     nodes {
       body
       id
@@ -43,7 +43,7 @@ export default async function Stories() {
         <h1>Custom connector</h1>
         <p>This page is rendered with data from a CSV file in Google Drive.</p>
         <CodeExample code={query} />
-        <section className="flex flex-wrap justify-between">
+        <section className="grid sm:grid-cols-2 md:grid-cols-4  justify-between pt-10">
           {stories?.map((book: any) => {
             return (
               <div key={book.id} className="mb-4" style={{ flexBasis: `24%` }}>
@@ -54,14 +54,24 @@ export default async function Stories() {
                     width={400}
                     height={300}
                     alt="A lovely bath"
+                    className="rounded-lg"
                   />
-                  <p className="text-center"> {book?.title}</p>
+                  <p className="text-center text-base pt-2"> {book?.title}</p>
                 </CardContent>
               </div>
             );
           })}
         </section>
       </section>
+      <p className="text-slate-40500 p-2 mt-10 text-center border-2 w-2/3 mx-auto rounded-full">
+        View this example on on{" "}
+        <a
+          href="https://github.com/abhiaiyer91/connectors/blob/master/connectors/stories/src/index.ts"
+          className="underline font-medium after:content-['_↗']"
+        >
+          Github
+        </a>
+      </p>
     </main>
   );
 }

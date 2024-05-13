@@ -4,16 +4,17 @@ import {
   NETLIFY_CONNECT_API_TOKEN,
   NETLIFY_CONNECT_API_URL,
 } from "@/constants";
+import Link from "next/link";
 
 const query = `
-query drupalPages {
-    allDrupalNodePage {
+  query drupalPages {
+    allDrupalNodePage(limit: 5) {
       nodes {
-        id
         title
         body {
           value
         }
+        created
       }
     }
   }
@@ -43,18 +44,24 @@ export default async function DrupalPages() {
         <h1>Drupal</h1>
         <p>This page is rendered with data from Drupal</p>
         <CodeExample code={query} />
+
         {pages?.map((page: any) => {
           return (
-            <Card key={page.id}>
-              <CardHeader>
-                <CardTitle>{page?.title}</CardTitle>
-                <CardContent>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: page?.body?.value }}
-                  />
-                </CardContent>
-              </CardHeader>
-            </Card>
+            <article
+              className="mt-5 p-5 rounded-xl border text-card-foreground shadow mb-4 "
+              key={page.id}
+            >
+              <h2 className="text-xl font-semibold">{page?.title}</h2>
+              <section className="pt-3 line-clamp-5 text-slate-500">
+                {page?.body?.value}
+              </section>
+              <Link
+                href="#"
+                className="block p-2 mx-auto text-blue-500 text-right font-semibold after:content-['_↗']"
+              >
+                Read More
+              </Link>
+            </article>
           );
         })}
       </section>
