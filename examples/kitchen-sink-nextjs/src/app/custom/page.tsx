@@ -49,11 +49,11 @@ export default async function Stories() {
               <div key={book.id} className="mb-4" style={{ flexBasis: `24%` }}>
                 <CardContent>
                   <Image
-                    src={book.image}
+                    src={`/.netlify/images/?url=${encodeURIComponent(book.image)}`}
                     layout="constrained"
                     width={400}
                     height={300}
-                    alt="A lovely bath"
+                    alt={book.title}
                     className="rounded-lg"
                   />
                   <p className="text-center text-base pt-2"> {book?.title}</p>
