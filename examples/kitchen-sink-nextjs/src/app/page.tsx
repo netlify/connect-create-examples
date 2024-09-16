@@ -25,7 +25,6 @@ export default function Home() {
             src="contentstack.png"
           />
           <Button name="Drupal" href="/drupal" src="drupal.png" />
-          <Button name="Shopify" href="/shopify" src="shopify.png" />
         </div>
         <h3 className=" text-lg pt-5 text-center  text-slate-400">
           Custom Connectors Examples
